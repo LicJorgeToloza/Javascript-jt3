@@ -74,15 +74,51 @@ const servicios = [
     }
 ];
 
-const contenedor = document.querySelector (".ul");
+const contenedor = document.querySelector ("div");
 
-let lista = document.createElement("ul");
-lista.classList.add("lista");
+console.log(contenedor);
 
+let lista2 = document.createElement("ul");
+lista2.classList.add("lista2");
 for(servicio of servicios) {
+    lista2.innerHTML += `<li class="lista-item">${servicio}</li>`
+ };
+
+contenedor.append(lista2);
+
+const agregaServAlForm = document.querySelector("#agregaItemForm");
+const inputServAlForm = document.querySelector("#inputServicio");
+const sumarAlCarro = document.querySelector("#carrito");
+
+agregaServAlForm.addEventListener("submit", agregaServ)
+
+ function agregaServ (e) {
+    e.preventDefault();
+
+        if (inputServAlForm.value != "") {
+            
+            let item = document.createElement("li");
+            item.innerText = inputServAlForm.value;
+            sumarAlCarro.append(item);
+        }
+
+    agregaServAlForm.reset();
+ }
+
+/*for(servicio of servicios) {
        lista.innerHTML+=`<li class=lista-item>${servicio}</li>`;
  };
- contenedor.append(lista);
+ contenedor.append(lista);*/
+
+
+ /*const disenioGrafico = document.querySelector (".ul");
+
+let lista = document.createElement("li");
+lista.classList.add("lista");
+
+
+disenioGrafico.append;*/
+
 
  //Lo copié tal cual del ejercicio de la presentacion de la clase y no me funciona
  //no encuentro el error.
@@ -95,16 +131,16 @@ for(servicio of servicios) {
                             <p> Pack ${servicio.pack}</p>
                             <b> Precio ${servicio.precio}</b>`;
       ul.appendChild(contenedor);
-}*/
+}
+*/
 
+let usuarioIngresado = input (nameUser);
+localStorage.setItem("usuario-ingresado", usuarioIngresado);
 
-const nameUser = input 
-localStorage.setItem ('usuario', "nameUser")
-
-const formulario=document.querySelector("#formulario")
+const formulario=document.querySelector("#formulario");
 console.log(formulario);
 
-function mostrarError = document.createElement("p")
+function mostrarError = document.createElement("p");
 mensajeError.textContent = msg
 mensajeError.classList.add("error")
 const modal = document.querySelector("#content")
@@ -116,4 +152,3 @@ function agregarcomentario(evt) {
     const comentario = document.querySelector("#comentario").value
 }
 
-localStorage.setItem(comentarioGuardado)
