@@ -19,20 +19,26 @@
             <input type="submit" id="submitServicio" class="formInputServicio" value="Agrega">
 
         </form>
-        
     </ul>
         
-    <div>
-        <p>Ingrese su Nombre</p>
-        <input class="nameUser" type="text">
-    </div>
+    <section>
+        <h3>Registro de Usuario</h3>
+        <form id="registroForm">
+            <label>Nombre</label>
+            <input type="text" placeholder="..." id="name" required autofocus>
+            <label>Email</label>
+            <input type="email" placeholder="..." id="email" required>
+            <label>Contraseña</label>
+            <input type="password" placeholder="..." id="password" required>
+            <input type="submit" value="Registrarse">
 
-    <form id="Formulario">
-        <p>Ingrese su comentario</p>
-        <label for="comentario:"></label>
-        <textarea name="comentario"  id="comentario" cols="30" rows="10"></textarea>
-        <button type="submit"> Agregar </button>
-    </form>
+        </form>
+        <div id="content">
+
+        </div>
+
+    </section>
+
         
 </body>
 </html>
