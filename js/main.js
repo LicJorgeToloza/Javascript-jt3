@@ -32,29 +32,32 @@ agregaServAlForm.addEventListener("submit", agregaServ)
     agregaServAlForm.reset();
  };
 
-
-
- const registroForm = document.querySelector('#registroForm');
-    registroForm.addEventListener('submit', (e)=>{
-        e.preventDefault()
-
-        const name = document.querySelector('#name').value
-        const email = document.querySelector('#email').value
-        const password = document.querySelector('#password').value
-
-        const Users = JSON.parse(localStorage.getItem('user')) || []
-        const usuarioRegistrado = Users.find (user => user.email === email)
-
-        if (usuarioRegistrado){
-            return alert ('Ud. ya está Registrado')
-        } 
-
-        Users.push ({name: name, email: email, password: password})
-        localStorage.setItem('Users', JSON.stringify(Users))
-
-            alert("Registro Exitoso")
-
+function estaRegistrado(email) {
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    return usuarios.some(function(usuario) {
+        return usuario.email === email;
     });
+}
+
+function registrarUsuario(nombre, email, contrasena) {
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    usuarios.push({ nombre: nombre, email: email, contrasena: contrasena });
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+}
+
+document.querySelector('#registroForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let nombre = document.querySelector('#nombre').value;
+    let email = document.querySelector('#email').value;
+    let contrasena = document.querySelector('#contrasena').value;
+
+    if (estaRegistrado(email)) {
+        alert('El email ya está registrado');
+    } else {
+        registrarUsuario(nombre, email, contrasena);
+        alert('¡Registro exitoso!');
+    }
+});
 
 
 

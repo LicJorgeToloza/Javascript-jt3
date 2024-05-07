@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="contenedor">
-        <p>Lista de Productos y Servicios</p>
+        <p>Lista de Productos y Servicios </p>
     </div>
 
     <ul class="agregarAlCarro" id="carrito">
-        <h3>Agregue el Producto o Servicio</h3>
+        <h3>Agregue Productos o Servicios personalizados que Ud. necesita </h3>
         <form action="" id="agregaItemForm" class="carga">
             <input type="text" id="inputServicio" class="formServicio">
             <input type="submit" id="submitServicio" class="formInputServicio" value="Agrega">
@@ -24,14 +24,13 @@
     <section>
         <h3>Registro de Usuario</h3>
         <form id="registroForm">
-            <label>Nombre</label>
-            <input type="text" placeholder="..." id="name" required autofocus>
-            <label>Email</label>
-            <input type="email" placeholder="..." id="email" required>
-            <label>Contraseña</label>
-            <input type="password" placeholder="..." id="password" required>
-            <input type="submit" value="Registrarse">
-
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required><br><br>
+            <button type="submit">Registrarse</button>
         </form>
         <div id="content">
 
